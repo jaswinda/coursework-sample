@@ -1,6 +1,8 @@
+package coursework;
+
 public class BankCard {
 
-    //Attributes to store cardId of client of the BankCard
+    //Attributes to store cardId of client of the coursework.BankCard
     private int cardId;
     //Attributes to store the customer or clientName
     private String clientName;

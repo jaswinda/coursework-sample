@@ -1,3 +1,5 @@
+package coursework;
+
 public class DebitCard extends BankCard {
 
     // Attribute to store the PIN number of the debit card
@@ -8,7 +10,7 @@ public class DebitCard extends BankCard {
     private String dateOfWithdrawal;
     // Attribute to store the date of the withdrawal
     private boolean hasWithdrawn;
-    // Constructor for the DebitCard class, which accepts six parameters and calls the superclass constructor
+    // Constructor for the coursework.DebitCard class, which accepts six parameters and calls the superclass constructor
     protected DebitCard(double balanceAmount, int cardId, String bankAccount, String issuerBank, String clientName,int pinNumber ) {
         // Call the superclass constructor with the parameters it expects
         super(balanceAmount, cardId, bankAccount, issuerBank);
