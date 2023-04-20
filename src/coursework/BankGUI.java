@@ -1,7 +1,6 @@
 package coursework;
 
-
-import coursework.views.Home;
+import views.Home;
 
 import javax.swing.*;
 import java.awt.*;
