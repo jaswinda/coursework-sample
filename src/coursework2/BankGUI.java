@@ -1,11 +1,8 @@
-package coursework;
+package coursework2;
 
 import views.Home;
 
-import javax.swing.*;
-import java.awt.*;
-
-public class BankGUI extends JFrame {
+public class BankGUI {
 
 
     public static void main(String[] args) {

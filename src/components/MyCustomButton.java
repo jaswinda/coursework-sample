@@ -1,15 +1,16 @@
 package components;
 
 import javax.swing.*;
-import java.awt.*;
+import  java.awt.*;
 
 public class MyCustomButton extends JButton {
 
     public MyCustomButton(String text) {
         super(text);
-        setFont(new Font("Arial", Font.BOLD, 20));
-        setForeground(Color.BLACK);
-        setBackground(Color.BLACK);
+        setFocusPainted(false);
+        setContentAreaFilled(false);
         setMargin(new Insets(10, 10, 10, 10));
+        setFont(new Font("Arial", Font.BOLD, 20));
+
     }
 }

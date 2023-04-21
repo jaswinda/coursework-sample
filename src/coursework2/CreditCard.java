@@ -1,4 +1,4 @@
-package coursework;
+package coursework2;
 
 public class CreditCard extends BankCard {
 
@@ -89,7 +89,7 @@ public class CreditCard extends BankCard {
         }
     }
 
-    // Method to display the details of the coursework.CreditCard object
+    // Method to display the details of the coursework2.CreditCard object
     protected void display() {
         System.out.println("Cvc Number: " + cvcNumber);
         System.out.println("Intrest Rate: " +interestRate);
