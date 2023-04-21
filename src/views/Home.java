@@ -1,23 +1,25 @@
 package views;
 
+import javax.swing.*;
 import components.MyCustomButton;
 
-import javax.swing.*;
-
 public class Home extends JFrame {
- public  MyCustomButton b1, b2;
-    public  Home(){
+
+    public Home(){
         super("Home");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(500, 500);
+        setLocationRelativeTo(null);
         setVisible(true);
 
         JPanel panel = new JPanel();
+        MyCustomButton button = new MyCustomButton("Add Debit Card");
+        panel.add(button);
 
-        b1= new MyCustomButton("Add Debit Card");
-        b2 = new MyCustomButton("Add Credit Card");
-        panel.add(b1);
-        panel.add(b2);
+        MyCustomButton button1 = new MyCustomButton("Add Credit Card");
+        panel.add(button1);
 
         add(panel);
+
     }
 }
