@@ -5,7 +5,7 @@ import components.MyCustomButton;
 import javax.swing.*;
 
 public class Home extends JFrame {
-
+ public  MyCustomButton b1, b2;
     public  Home(){
         super("Home");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -13,10 +13,10 @@ public class Home extends JFrame {
 
         JPanel panel = new JPanel();
 
-        MyCustomButton button = new MyCustomButton("Add Debit Card");
-        panel.add(button);
-        MyCustomButton button1 = new MyCustomButton("Add Credit Card");
-        panel.add(button1);
+        b1= new MyCustomButton("Add Debit Card");
+        b2 = new MyCustomButton("Add Credit Card");
+        panel.add(b1);
+        panel.add(b2);
 
         add(panel);
     }
