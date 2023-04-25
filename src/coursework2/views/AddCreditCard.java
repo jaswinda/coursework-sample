@@ -47,6 +47,14 @@ public class AddCreditCard extends JFrame {
         b1 = new MyCustomButton("Add");
         b2 = new MyCustomButton("Clear");
 
+        b1.addActionListener(e -> {
+
+        });
+
+        b2.addActionListener(e -> {
+            clear();
+        });
+
         gbc.gridx = 0;
         gbc.gridy = 0;
         gbc.gridwidth = 2;
@@ -146,5 +154,16 @@ public class AddCreditCard extends JFrame {
         panel.add(b1, gbc);
 
         add(panel);
+    }
+
+    public void clear(){
+        t1.setText("");
+        t2.setText("");
+        t3.setText("");
+        t4.setText("");
+        t5.setText("");
+        t6.setText("");
+        t7.setText("");
+        t8.setText("");
     }
 }

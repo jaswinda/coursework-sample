@@ -28,6 +28,18 @@ public class Home extends JFrame {
             new AddCreditCard();
         });
 
+        b3.addActionListener(e -> {
+            new WithdrawFromDebitCard();
+        });
+
+        b4.addActionListener(e -> {
+            new SetCreditLimit();
+        });
+
+        b5.addActionListener(e -> {
+            new CancelCreditCard();
+        });
+
 
         panel.add(b1);
         panel.add(b2);
