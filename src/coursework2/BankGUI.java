@@ -1,5 +1,5 @@
 package coursework2;
-import views.Home;
+import coursework2.views.Home;
 
 public class BankGUI {
 

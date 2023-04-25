@@ -1,4 +1,4 @@
-package components;
+package coursework2.components;
 
 import javax.swing.*;
 
