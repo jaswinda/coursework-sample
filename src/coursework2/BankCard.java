@@ -22,23 +22,23 @@ public class BankCard {
         this.clientName = "";
     }
     // Accessor method for card id
-    protected int getCardId() {
+    public int getCardId() {
         return cardId;
     }
     // Accessor method for bank account
-    protected String getClientName() {
+    public String getClientName() {
         return clientName;
     }
     // Accessor method for bank account
-    protected String getIssuerBank() {
+    public String getIssuerBank() {
         return issuerBank;
     }
     // Accessor method for bank account
-    protected String getBankAccount() {
+    public String getBankAccount() {
         return bankAccount;
     }
     // Accessor method for balance amount
-    protected double getBalanceAmount() {
+    public double getBalanceAmount() {
         return balanceAmount;
     }
     // method to set the client name

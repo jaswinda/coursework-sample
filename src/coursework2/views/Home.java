@@ -1,9 +1,14 @@
 package coursework2.views;
 
 import javax.swing.*;
+
+import coursework2.BankCard;
 import coursework2.components.MyCustomButton;
 
+import java.util.ArrayList;
+
 public class Home extends JFrame {
+    ArrayList<BankCard> bankCards = new ArrayList<>();
     MyCustomButton b1, b2, b3, b4, b5, b6;
     public Home(){
         super("Home");
@@ -21,7 +26,7 @@ public class Home extends JFrame {
         b6 = new MyCustomButton("Display");
 
         b1.addActionListener(e -> {
-            new AddDebitCard();
+            new AddDebitCard(bankCards);
         });
 
         b2.addActionListener(e -> {
@@ -38,6 +43,10 @@ public class Home extends JFrame {
 
         b5.addActionListener(e -> {
             new CancelCreditCard();
+        });
+
+        b6.addActionListener(e -> {
+            new Display(bankCards);
         });
 
 

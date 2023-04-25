@@ -1,17 +1,20 @@
 package coursework2.views;
 
+import coursework2.BankCard;
+import coursework2.DebitCard;
 import coursework2.components.MyCustomButton;
 import coursework2.components.MyCustomLabel;
 import coursework2.components.MyCustomTextField;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class AddDebitCard extends JFrame {
     MyCustomTextField t1, t2, t3, t4, t5, t6;
     MyCustomButton b1, b2;
     MyCustomLabel l1, l2, l3, l4, l5, l6, l7;
-    public AddDebitCard(){
+    public AddDebitCard(ArrayList<BankCard> bankCards){
         super("Add Debit Card");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setSize(500, 500);
@@ -39,7 +42,24 @@ public class AddDebitCard extends JFrame {
         b2 = new MyCustomButton("Clear");
 
         b1.addActionListener(e -> {
+            String balanceAmount = t1.getText();
+            String cardId = t2.getText();
+            String bankAccount = t3.getText();
+            String issueBank = t4.getText();
+            String clientName = t5.getText();
+            String pinNumber = t6.getText();
 
+            if (balanceAmount.equals("") || cardId.equals("") || bankAccount.equals("") || issueBank.equals("") || clientName.equals("") || pinNumber.equals("")) {
+                JOptionPane.showMessageDialog(null, "Please fill all the fields");
+            } else {
+                double balance = Double.parseDouble(balanceAmount);
+                int card = Integer.parseInt(cardId);
+                int pin = Integer.parseInt(pinNumber);
+                DebitCard debitCard = new DebitCard(balance, card, bankAccount, issueBank, clientName, pin);
+                bankCards.add(debitCard);
+                JOptionPane.showMessageDialog(null, "Debit Card added successfully");
+                clear();
+            }
         });
 
         b2.addActionListener(e -> {
@@ -119,7 +139,7 @@ public class AddDebitCard extends JFrame {
         add(panel);
     }
 
-    public void clear(){
+    public void clear() {
         t1.setText("");
         t2.setText("");
         t3.setText("");
