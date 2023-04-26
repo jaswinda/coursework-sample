@@ -10,10 +10,12 @@ public class DebitCard extends BankCard {
     private String dateOfWithdrawal;
     // Attribute to store the date of the withdrawal
     private boolean hasWithdrawn;
+
+    private String cardType;
     // Constructor for the coursework2.DebitCard class, which accepts six parameters and calls the superclass constructor
     public DebitCard(double balanceAmount, int cardId, String bankAccount, String issuerBank, String clientName,int pinNumber ) {
         // Call the superclass constructor with the parameters it expects
-        super(balanceAmount, cardId, bankAccount, issuerBank);
+        super(balanceAmount, cardId, bankAccount, issuerBank, "Debit Card");
         //call the setter method (client name) from the Bankcard
         super.setClientName(clientName);
         //call the setter method (balance amount) from the Bankcard
@@ -22,10 +24,11 @@ public class DebitCard extends BankCard {
         this.pinNumber = pinNumber;
         // Initialize the hasWithdrawn attribute to false
         this.hasWithdrawn = false;
+        this.cardType = "Debit Card";
     }
 
     // Accessor methods for the attributes
-    protected int getPinNumber() {
+    public int getPinNumber() {
         return pinNumber;
     }
     // Accessor method for the withdrawalAmount attribute
@@ -37,7 +40,7 @@ public class DebitCard extends BankCard {
         return dateOfWithdrawal;
     }
     // Accessor method for the hasWithdrawn attribute
-    protected boolean hasWithdrawn() {
+    public boolean hasWithdrawn() {
         return hasWithdrawn;
     }
     // Mutator method for the withdrawal amount attribute

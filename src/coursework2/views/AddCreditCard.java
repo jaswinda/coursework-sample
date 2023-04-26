@@ -1,17 +1,20 @@
 package coursework2.views;
 
+import coursework2.BankCard;
+import coursework2.CreditCard;
 import coursework2.components.MyCustomButton;
 import coursework2.components.MyCustomLabel;
 import coursework2.components.MyCustomTextField;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class AddCreditCard extends JFrame {
     MyCustomTextField t1, t2, t3, t4, t5, t6, t7, t8;
     MyCustomLabel l1, l2, l3, l4, l5, l6, l7, l8, l9;
-    MyCustomButton b1, b2;
-    public AddCreditCard(){
+    MyCustomButton b1, b2, b3;
+    public AddCreditCard(ArrayList<BankCard> bankCards){
         super("Add Credit Card");
         setSize(500, 600);
         setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
@@ -46,14 +49,41 @@ public class AddCreditCard extends JFrame {
 
         b1 = new MyCustomButton("Add");
         b2 = new MyCustomButton("Clear");
+        b3 = new MyCustomButton("Display");
 
         b1.addActionListener(e -> {
+            String cardId = t1.getText();
+            String clientName = t2.getText();
+            String issueBank = t3.getText();
+            String bankAccount = t4.getText();
+            String balanceAmount = t5.getText();
+            String cvcNumber = t6.getText();
+            String interestRate = t7.getText();
+            String expirationDate = t8.getText();
 
+            if (cardId.equals("") || clientName.equals("") || issueBank.equals("") || bankAccount.equals("") || balanceAmount.equals("") || cvcNumber.equals("") || interestRate.equals("") || expirationDate.equals("")) {
+                JOptionPane.showMessageDialog(null, "Please fill all the fields");
+            } else {
+                int card = Integer.parseInt(cardId);
+                double balance = Double.parseDouble(balanceAmount);
+                int cvc = Integer.parseInt(cvcNumber);
+                double interest = Double.parseDouble(interestRate);
+                CreditCard creditCard = new CreditCard(card, clientName, issueBank, bankAccount, balance, cvc, interest, expirationDate);
+                bankCards.add(creditCard);
+                JOptionPane.showMessageDialog(null, "Credit Card added successfully");
+            }
         });
 
         b2.addActionListener(e -> {
             clear();
         });
+
+        b3.addActionListener(e -> {
+
+
+        });
+
+
 
         gbc.gridx = 0;
         gbc.gridy = 0;

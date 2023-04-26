@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class AddDebitCard extends JFrame {
     MyCustomTextField t1, t2, t3, t4, t5, t6;
-    MyCustomButton b1, b2;
+    MyCustomButton b1, b2, b3;
     MyCustomLabel l1, l2, l3, l4, l5, l6, l7;
     public AddDebitCard(ArrayList<BankCard> bankCards){
         super("Add Debit Card");
@@ -40,6 +40,7 @@ public class AddDebitCard extends JFrame {
 
         b1 = new MyCustomButton("Add");
         b2 = new MyCustomButton("Clear");
+        b3 = new MyCustomButton("Display");
 
         b1.addActionListener(e -> {
             String balanceAmount = t1.getText();
@@ -65,6 +66,12 @@ public class AddDebitCard extends JFrame {
         b2.addActionListener(e -> {
             clear();
         });
+
+        b3.addActionListener(e -> {
+            new DisplayDebitCards(bankCards);
+        });
+
+
 
         GridBagLayout gbl = new GridBagLayout();
         GridBagConstraints gbc = new GridBagConstraints();
@@ -135,6 +142,10 @@ public class AddDebitCard extends JFrame {
         gbc.gridx = 1;
         gbc.gridy = 7;
         panel.add(b1, gbc);
+
+        gbc.gridx = 2;
+        gbc.gridy = 7;
+        panel.add(b3, gbc);
 
         add(panel);
     }

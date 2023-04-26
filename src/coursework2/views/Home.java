@@ -30,7 +30,7 @@ public class Home extends JFrame {
         });
 
         b2.addActionListener(e -> {
-            new AddCreditCard();
+            new AddCreditCard(bankCards);
         });
 
         b3.addActionListener(e -> {
@@ -49,15 +49,12 @@ public class Home extends JFrame {
             new Display(bankCards);
         });
 
-
         panel.add(b1);
         panel.add(b2);
         panel.add(b3);
         panel.add(b4);
         panel.add(b5);
         panel.add(b6);
-
-
         add(panel);
     }
 }

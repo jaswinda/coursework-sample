@@ -15,13 +15,14 @@ public class Display extends JFrame {
         setVisible(true);
 
         JPanel panel = new JPanel();
-        String[] columnNames = {"Card Id", "Bank Account", "Balance", "Client Name"};
-        String[][] data = new String[bankCards.size()][4];
+        String[] columnNames = {"Card Id", "Bank Account", "Balance", "Client Name", "Card Type"};
+        String[][] data = new String[bankCards.size()][5];
         for (int i = 0; i < bankCards.size(); i++) {
             data[i][0] = String.valueOf(bankCards.get(i).getCardId());
             data[i][1] = String.valueOf(bankCards.get(i).getBankAccount());
             data[i][2] = String.valueOf(bankCards.get(i).getBalanceAmount());
             data[i][3] = String.valueOf(bankCards.get(i).getClientName());
+            data[i][4] = String.valueOf(bankCards.get(i).getCardType());
         }
         table = new JTable(data, columnNames);
         JScrollPane scrollPane = new JScrollPane(table);
