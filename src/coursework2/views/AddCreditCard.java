@@ -71,6 +71,7 @@ public class AddCreditCard extends JFrame {
                 CreditCard creditCard = new CreditCard(card, clientName, issueBank, bankAccount, balance, cvc, interest, expirationDate);
                 bankCards.add(creditCard);
                 JOptionPane.showMessageDialog(null, "Credit Card added successfully");
+                clear();
             }
         });
 

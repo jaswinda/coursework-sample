@@ -5,6 +5,7 @@ import javax.swing.*;
 import coursework2.BankCard;
 import coursework2.components.MyCustomButton;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 public class Home extends JFrame {
@@ -17,7 +18,13 @@ public class Home extends JFrame {
         setLocationRelativeTo(null);
         setVisible(true);
 
+
         JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(3, 2, 10, 10));
+        panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        panel.setBackground(Color.yellow);
+        panel.setForeground(Color.BLACK);
+        panel.setFont(new Font("Arial", Font.PLAIN, 20));
         b1 = new MyCustomButton("Add Debit Card");
         b2 = new MyCustomButton("Add Credit Card");
         b3 = new MyCustomButton("Withdraw from Debit Card");

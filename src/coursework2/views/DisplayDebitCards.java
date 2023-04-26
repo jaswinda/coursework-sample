@@ -23,14 +23,18 @@ public class DisplayDebitCards extends JFrame {
         String[] columnNames = {"Card Id", "Bank Account", "Balance", "Client Name", "Card Type", "Pin", "Has Withdrawn"};
         String[][] data = new String[bankCards.size()][7];
         for (int i = 0; i < bankCards.size(); i++) {
-            DebitCard debitCard = (DebitCard) bankCards.get(i);
-            data[i][0] = String.valueOf(debitCard.getCardId());
-            data[i][1] = String.valueOf(debitCard.getBankAccount());
-            data[i][2] = String.valueOf(debitCard.getBalanceAmount());
-            data[i][3] = String.valueOf(debitCard.getClientName());
-            data[i][4] = String.valueOf(debitCard.getCardType());
-            data[i][5] = String.valueOf(debitCard.getPinNumber());
-            data[i][6] = String.valueOf(debitCard.hasWithdrawn());
+            try {
+                DebitCard debitCard = (DebitCard) bankCards.get(i);
+                data[i][0] = String.valueOf(debitCard.getCardId());
+                data[i][1] = String.valueOf(debitCard.getBankAccount());
+                data[i][2] = String.valueOf(debitCard.getBalanceAmount());
+                data[i][3] = String.valueOf(debitCard.getClientName());
+                data[i][4] = String.valueOf(debitCard.getCardType());
+                data[i][5] = String.valueOf(debitCard.getPinNumber());
+                data[i][6] = String.valueOf(debitCard.hasWithdrawn());
+            } catch (Exception e) {
+                System.out.println("Not a debit card");
+            }
         }
         JTable table = new JTable(data, columnNames);
         JScrollPane scrollPane = new JScrollPane(table);
