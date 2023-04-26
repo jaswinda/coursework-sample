@@ -10,11 +10,10 @@ public class CreditCard extends BankCard{
     private int gracePeriod;
     private boolean isGranted;
 
-    private String cardType;
     //constructor that accepts eight parameters: cardId, clientName, issuerBank, bankAccount, balanceAmount, cvcNumber, interestRate, expirationDate as expected
     public CreditCard(int cardId, String clientName, String issuerBank, String bankAccount, double balanceAmount, int cvcNumber, double interestRate, String expirationDate) {
         //call to the constructor of the superclass with four arguments
-        super(balanceAmount,cardId, bankAccount, issuerBank, "Credit Card");
+        super(balanceAmount,cardId, bankAccount, issuerBank);
         //call the setter method (client name) from the Bankcard
         super.setClientName(clientName);
         //call the setter method (balance amount) from the Bankcard
@@ -25,7 +24,6 @@ public class CreditCard extends BankCard{
         this.expirationDate = expirationDate;
         // isGranted is set to false
         this.isGranted = false;
-        this.cardType = "Credit Card";
     }
 
     // accessor method for CVC number

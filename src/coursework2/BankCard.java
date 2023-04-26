@@ -13,22 +13,16 @@ public class BankCard {
     //Attributes to store the balance amount of the client
     private double balanceAmount;
 
-    private String cardType;
     //Constructor for bankCard with four parameters balanceAmount, cardId, bankAccount,issuerBank.
-    protected BankCard(double balanceAmount, int cardId, String bankAccount,String issuerBank, String cardType) {
+    protected BankCard(double balanceAmount, int cardId, String bankAccount,String issuerBank) {
         this.balanceAmount = balanceAmount;
         this.cardId = cardId;
         this.bankAccount = bankAccount;
         this.issuerBank = issuerBank;
-        this.cardType = cardType;
         //An empty string shall be initialized as the client name.
         this.clientName = "";
     }
 
-    // Accessor method for card type
-    public String getCardType() {
-        return cardType;
-    }
     // Accessor method for card id
     public int getCardId() {
         return cardId;

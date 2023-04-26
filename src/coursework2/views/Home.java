@@ -22,7 +22,6 @@ public class Home extends JFrame {
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(3, 2, 10, 10));
         panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        panel.setBackground(Color.yellow);
         panel.setForeground(Color.BLACK);
         panel.setFont(new Font("Arial", Font.PLAIN, 20));
         b1 = new MyCustomButton("Add Debit Card");

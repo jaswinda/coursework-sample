@@ -22,7 +22,7 @@ public class Display extends JFrame {
             data[i][1] = String.valueOf(bankCards.get(i).getBankAccount());
             data[i][2] = String.valueOf(bankCards.get(i).getBalanceAmount());
             data[i][3] = String.valueOf(bankCards.get(i).getClientName());
-            data[i][4] = String.valueOf(bankCards.get(i).getCardType());
+            data[i][4] = bankCards.get(i) instanceof coursework2.DebitCard ? "Debit Card" : "Credit Card";
         }
         table = new JTable(data, columnNames);
         JScrollPane scrollPane = new JScrollPane(table);
